@@ -5,7 +5,8 @@ import App from './App'
 import router from './router'
 // 引入公共样式
 import "../static/css/reset.css";
-
+// 引入阿里图标
+import "../static/fonts/iconfont";
 // 安装mint-ui
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
