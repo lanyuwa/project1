@@ -13,7 +13,12 @@ import 'mint-ui/lib/style.css'
 Vue.use(MintUI);
 
 import axios from "axios"
+axios.defaults.baseURL = "http://tanzhouweb.com/vueProject/";
 Vue.prototype.axios = axios;
+Vue.prototype.dataURL = function (file,title,id) {
+  id = (id === undefined)?'':id;
+  return file+'?title='+title+id;
+};
 
 Vue.config.productionTip = false;
 

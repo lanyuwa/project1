@@ -3,7 +3,7 @@
     <!--轮播-->
     <mt-swipe :auto="4000" class="banner">
       <mt-swipe-item v-for="(item,index) in bannerImg" :key="index">
-        <router-link :to="{name:'banner.detail'}">
+        <router-link :to="{name:'banner.detail',query:{id:item.id,title:item.title}}">
           <img :src="item.picUrl" :alt="item.title" :title="item.title" width="100%" height="100%">
         </router-link>
       </mt-swipe-item>
@@ -71,9 +71,11 @@ export default {
   },
   created(){
     {
-      this.axios.get("http://tanzhouweb.com/vueProject/vue.php?title=banner")
+      // this.axios.get("http://tanzhouweb.com/vueProject/vue.php?title=banner")
+      this.axios.get(this.dataURL("vue.php","banner"))
         .then((res)=>{
           this.bannerImg = res.data;
+          console.log(this.bannerImg);
         })
     }
   }

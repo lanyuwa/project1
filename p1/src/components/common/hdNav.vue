@@ -6,6 +6,7 @@
       </svg>
       <span>返回</span>
     </div>
+    <p>{{title}}</p>
     <div class="choose">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-diandian"></use>
@@ -20,6 +21,7 @@
 
       }
     },
+    props:["title"],
     methods:{
       back:function () {
         this.$router.go(-1)

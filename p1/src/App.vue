@@ -66,6 +66,8 @@ export default {
     font-size:70/@rem;
   }
   #app{
+    position: relative;
+    background-color: #f5f5f5;
     max-width:750px;
     height:100%;
     margin:auto;
@@ -86,6 +88,7 @@ export default {
     position:fixed;
     bottom:0;
     left:0;
+    background-color: #fff;
     border-top:1px solid #ddd;
     box-shadow: 0 0 5px #ddd;
     a{
