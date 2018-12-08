@@ -10,14 +10,14 @@
     </mt-swipe>
     <!--九宫格-->
     <div class="grids">
-      <a href="">
+      <router-link :to="{name:'newList'}">
         <div class="center">
           <svg class="icon">
             <use xlink:href="#icon-news_icon"></use>
           </svg>
           <p>新闻资讯</p>
         </div>
-      </a>
+      </router-link>
       <a href="">
         <div class="center">
           <svg class="icon">
@@ -75,7 +75,6 @@ export default {
       this.axios.get(this.dataURL("vue.php","banner"))
         .then((res)=>{
           this.bannerImg = res.data;
-          console.log(this.bannerImg);
         })
     }
   }
