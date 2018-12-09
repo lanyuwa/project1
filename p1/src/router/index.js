@@ -5,6 +5,7 @@ import hdNav from '../components/common/hdNav'
 import bannerDetail from '../components/banner/bannerDetail'
 import newList from '../components/newList/newList'
 import newDetail from '../components/newList/newDetail'
+import photoList from '../components/photoShare/photoShare'
 
 Vue.use(Router);
 Vue.component("hdNav",hdNav);
@@ -30,6 +31,11 @@ export default new Router({
       name:"newList.detail",
       path:"/newList/detail",
       component:newDetail
+    },
+    {
+      name:"photoShare.photoList",
+      path:"/photoShare/List",
+      component:photoList
     }
   ]
 })

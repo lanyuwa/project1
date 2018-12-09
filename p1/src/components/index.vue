@@ -18,14 +18,14 @@
           <p>新闻资讯</p>
         </div>
       </router-link>
-      <a href="">
+      <router-link :to="{name:'photoShare.photoList'}">
         <div class="center">
           <svg class="icon">
             <use xlink:href="#icon-plus-share"></use>
           </svg>
           <p>图文分享</p>
         </div>
-      </a>
+      </router-link>
       <a href="">
         <div class="center">
           <svg class="icon">
