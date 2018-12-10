@@ -11,6 +11,9 @@ import "../static/fonts/iconfont";
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI);
+// 安装图片预览插件
+import VuePreview from 'vue2-preview'
+Vue.use(VuePreview);
 
 import axios from "axios"
 axios.defaults.baseURL = "http://tanzhouweb.com/vueProject/";

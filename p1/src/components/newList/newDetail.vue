@@ -22,7 +22,6 @@
       this.axios.get(this.dataURL("vue.php","newsList",this.id))
       .then((res)=>{
           this.content = res.data;
-          console.log(this.content)
       })
     }
   }

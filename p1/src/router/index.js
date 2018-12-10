@@ -6,6 +6,7 @@ import bannerDetail from '../components/banner/bannerDetail'
 import newList from '../components/newList/newList'
 import newDetail from '../components/newList/newDetail'
 import photoList from '../components/photoShare/photoShare'
+import photo from '../components/photoShare/photo'
 
 Vue.use(Router);
 Vue.component("hdNav",hdNav);
@@ -36,6 +37,11 @@ export default new Router({
       name:"photoShare.photoList",
       path:"/photoShare/List",
       component:photoList
+    },
+    {
+      name:"photoList.detail",
+      path:"/photo",
+      component:photo
     }
   ]
 })
