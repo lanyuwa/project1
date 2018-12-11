@@ -3,24 +3,24 @@
     <header>lanyuwa测试项目</header>
     <router-view/>
     <footer>
-      <a href="">
+      <router-link :to="{name:'index'}">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-shouye"></use>
         </svg>
         <p>首页</p>
-      </a>
-      <a href="">
+      </router-link>
+      <router-link :to="{name:'map'}">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-ditu"></use>
         </svg>
         <p>地图</p>
-      </a>
-      <a href="">
+      </router-link>
+      <router-link :to="{name:'weather'}">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-tianqi"></use>
         </svg>
         <p>天气</p>
-      </a>
+      </router-link>
       <a href="">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-gouwuche"></use>

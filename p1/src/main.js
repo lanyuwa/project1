@@ -14,6 +14,9 @@ Vue.use(MintUI);
 // 安装图片预览插件
 import VuePreview from 'vue2-preview'
 Vue.use(VuePreview);
+// 安装jquery
+import jquery from "jquery"
+Vue.prototype.$jq = jquery;
 
 import axios from "axios"
 axios.defaults.baseURL = "http://tanzhouweb.com/vueProject/";

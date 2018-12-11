@@ -26,23 +26,23 @@
           <p>图文分享</p>
         </div>
       </router-link>
-      <a href="">
+      <router-link :to="{name:'shopList',query: {}}">
         <div class="center">
           <svg class="icon">
             <use xlink:href="#icon-shangpinfenlei"></use>
           </svg>
           <p>商品展示</p>
         </div>
-      </a>
-      <a href="">
+      </router-link>
+      <router-link :to="{name:'say'}">
         <div class="center">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-liuyanjianyi"></use>
           </svg>
           <p>留言反馈</p>
         </div>
-      </a>
-      <a href="">
+      </router-link>
+      <a href="sms:10086">
         <div class="center">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-iconfontzhengzaidingwei"></use>
@@ -50,7 +50,7 @@
           <p>短信联系</p>
         </div>
       </a>
-      <a href="">
+      <a href="tel:10086">
         <div class="center">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-lianxiwomen"></use>

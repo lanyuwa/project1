@@ -4,7 +4,6 @@
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-fanhui2"></use>
       </svg>
-      <span>返回</span>
     </div>
     <p>{{title}}</p>
     <div class="choose">
