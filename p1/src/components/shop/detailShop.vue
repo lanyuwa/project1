@@ -17,13 +17,13 @@
         <div class="num">
           <span>购买数量</span>
           <div>
-            <p class="reduce">-</p>
-            <p class="number">1</p>
-            <p class="add">+</p>
+            <p class="reduce" @click="reduce">-</p>
+            <p>{{num}}</p>
+            <p class="add" @click="add">+</p>
           </div>
         </div>
         <div class="btn">
-          <p class="left">加入购物车</p>
+          <p class="left" @click="commitCart">加入购物车</p>
           <p class="right">立即购买</p>
         </div>
       </div>
@@ -34,6 +34,7 @@
   export default {
     data(){
       return{
+        num:1,
         msg:{},
         index:0
       }
@@ -42,9 +43,24 @@
       this.index = this.$route.query.id;
       this.axios.get(this.dataURL("vue.php","likeYou"))
         .then((res)=>{
+          res.data["id"] = this.index+1;
           this.msg = res.data[this.index];
-          console.log(this.msg);
         })
+    },
+    methods:{
+      reduce(){
+          if(this.num<=1)return;
+          this.num--;
+          this.$store.commit("reduceCartNum");
+      },
+      add(){
+          if(this.num>=20)return;
+          this.num++;
+          this.$store.commit("addCartNum");
+      },
+      commitCart(){
+
+      }
     }
   }
 </script>

@@ -21,12 +21,13 @@
         </svg>
         <p>天气</p>
       </router-link>
-      <a href="">
+      <router-link :to="{name:'shopCart'}">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-gouwuche"></use>
         </svg>
         <p>购物</p>
-      </a>
+        <span class="showNum" v-show="num">{{num}}</span>
+      </router-link>
     </footer>
   </div>
 </template>
@@ -35,6 +36,11 @@ export default {
   data(){
     return{
 
+    }
+  },
+  computed:{
+    num(){
+      return this.$store.state.num;
     }
   },
   created(){
@@ -92,6 +98,7 @@ export default {
     border-top:1px solid #ddd;
     box-shadow: 0 0 5px #ddd;
     a{
+      position:relative;
       width:25%;
       height:100%;
       svg{
@@ -100,6 +107,19 @@ export default {
       p{
         font-size:24/@rem;
         color:#26a2ff;
+      }
+      .showNum{
+        position:absolute;
+        top:10/@rem;
+        right:30/@rem;
+        width:40/@rem;
+        height:40/@rem;
+        text-align: center;
+        line-height:40/@rem;
+        background-color: red;
+        border-radius: 100%;
+        font-size:16/@rem;
+        color:#fff;
       }
     }
   }

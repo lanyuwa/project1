@@ -12,6 +12,7 @@ import shopDetail from '../components/shop/detailShop'
 import say from '../components/saySomething/say'
 import weather from '../components/common/weather'
 import map from '../components/map/map'
+import shopCart from '../components/shopcart/shopCart'
 
 Vue.use(Router);
 Vue.component("hdNav",hdNav);
@@ -76,6 +77,11 @@ export default new Router({
       name:"map",
       path:"/map",
       component:map
+    },
+    {
+      name:"shopCart",
+      path:"/shopCart",
+      component:shopCart
     }
   ]
 })

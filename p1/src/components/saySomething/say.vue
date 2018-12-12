@@ -1,7 +1,7 @@
 <template>
   <div id="say">
     <hdNav></hdNav>
-    <p>你点击的页面不存在，请返回。</p>
+    <p>您访问的页面不存在，请返回。</p>
   </div>
 </template>
 <script>

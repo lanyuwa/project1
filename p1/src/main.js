@@ -17,6 +17,23 @@ Vue.use(VuePreview);
 // 安装jquery
 import jquery from "jquery"
 Vue.prototype.$jq = jquery;
+// 安装vuex
+import Vuex from "vuex"
+Vue.use(Vuex);
+let store = new Vuex.Store({
+    state:{
+      num:1
+    },
+    mutations:{
+      addCartNum(state){
+        state.num++;
+      },
+      reduceCartNum(state){
+        state.num--;
+      }
+    }
+});
+
 
 import axios from "axios"
 axios.defaults.baseURL = "http://tanzhouweb.com/vueProject/";
@@ -31,6 +48,7 @@ Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'
