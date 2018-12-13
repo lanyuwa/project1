@@ -2,7 +2,7 @@
   <div id="shopDetail">
     <hdNav></hdNav>
     <div class="detail">
-      <div class="img">
+      <div class="d-img">
         <img :src="msg.imgUrl" alt="">
       </div>
       <div class="text">
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="btn">
-          <p class="left" @click="commitCart">加入购物车</p>
+          <p class="left" @click="addCart">加入购物车</p>
           <p class="right">立即购买</p>
         </div>
       </div>
@@ -31,11 +31,14 @@
   </div>
 </template>
 <script>
+  import connect from '../common/connect'
+  import shopTools from '../common/shopTools'
   export default {
     data(){
       return{
         num:1,
         msg:{},
+        shopDetails:{},
         index:0
       }
     },
@@ -45,21 +48,24 @@
         .then((res)=>{
           res.data["id"] = this.index+1;
           this.msg = res.data[this.index];
+          this.shopDetails = res.data;
         })
     },
     methods:{
       reduce(){
           if(this.num<=1)return;
           this.num--;
-          this.$store.commit("reduceCartNum");
       },
       add(){
           if(this.num>=20)return;
           this.num++;
-          this.$store.commit("addCartNum");
       },
-      commitCart(){
-
+      addCart(){
+          connect.$emit('addCart',this.num);
+          shopTools.addUpdate({
+            id:this.shopDetails.id,
+            num:this.num
+          })
       }
     }
   }
@@ -72,7 +78,7 @@
     margin-bottom: 130/@rem;
     .detail{
       width:100%;
-      .img{
+      .d-img{
         width:100%;
         height:650/@rem;
         margin:0 auto;

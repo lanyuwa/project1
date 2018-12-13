@@ -26,26 +26,31 @@
           <use xlink:href="#icon-gouwuche"></use>
         </svg>
         <p>购物</p>
-        <span class="showNum" v-show="num">{{num}}</span>
+        <span class="showNum" v-show="pickNum">{{pickNum}}</span>
       </router-link>
     </footer>
   </div>
 </template>
 <script>
+  import connect from './components/common/connect'
 export default {
   data(){
     return{
-
+      pickNum:0
     }
   },
   computed:{
-    num(){
-      return this.$store.state.num;
-    }
+    // num(){
+    //     return this.$store.state.num;
+    // }
   },
   created(){
     this.remChange();
-    window.addEventListener("resize",this.remChange)
+    window.addEventListener("resize",this.remChange);
+
+    connect.$on('addCart', (num)=>{
+      this.pickNum += num
+    })
   },
   methods:{
     remChange:function () {
