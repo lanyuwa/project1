@@ -33,7 +33,6 @@
       margin-bottom:150/@rem;
       .con{
         padding:0 40/@rem;
-        background-color: #f5f5f5;
         h2{
           margin-top:10/@rem;
           text-align: left;

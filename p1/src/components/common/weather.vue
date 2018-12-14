@@ -148,6 +148,12 @@
           }
         });
       }
+    },
+    mounted(){
+      let oBg = document.getElementsByClassName("bg")[0];
+      let h = document.documentElement.clientHeight;
+      console.log(h);
+      oBg.style.height = h+"px";
     }
   }
 </script>
@@ -155,7 +161,7 @@
 <style scoped lang="less">
   @rem:750/10rem;
   .bg{
-    height: 100%;
+    /*height: 100%;*/
     background: -webkit-linear-gradient(
       top,
       #394984,

@@ -11,11 +11,11 @@
           <div class="cart-btn">
             <div class="cart-price">{{item.symbol}}{{item.price}}</div>
             <div class="cart-btn">
-              <p class="cart-reduce">-</p>
+              <p class="cart-reduce" @click="reduce(index)">-</p>
               <p class="cart-num">{{item.num}}</p>
-              <p class="cart-add">+</p>
+              <p class="cart-add" @click="add(index)">+</p>
             </div>
-            <div class="del">删除</div>
+            <div class="del" @click="del(index)">删除</div>
           </div>
         </li>
       </ul>
@@ -71,7 +71,34 @@
             })
           })
       });
-
+    },
+    methods:{
+      add(i){
+        if(this.shopList[i].num<20){
+          this.shopList[i].num++;
+          connet.$emit('addCart',1);
+          shopTools.addUpdate({
+            id:this.shopList[i].id,
+            num:1
+          })
+        }
+      },
+      reduce(i){
+        if(this.shopList[i].num>1){
+          this.shopList[i].num--;
+          connet.$emit('addCart',-1);
+          shopTools.addUpdate({
+            id:this.shopList[i].id,
+            num:-1
+          })
+        }
+      },
+      del(i){
+        let shops = this.shopList[i];
+        shopTools.delete(shops.id);
+        connet.$emit('addCart',-shops.num);
+        this.shopList.splice(i,1);
+      }
     }
   }
 </script>
